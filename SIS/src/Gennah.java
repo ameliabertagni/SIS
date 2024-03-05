@@ -1,11 +1,10 @@
 
-public class Genna
+public class Gennah
 	{
 
 		public static void main(String[] args)
 			{
-				System.out.println("Genna");
-
+				System.out.println("G");
 			}
 
 	}
