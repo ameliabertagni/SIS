@@ -3,7 +3,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Amelia 
+public class SortClass
 {
 	static Scanner userStringInput = new Scanner(System.in);
 	static Scanner userInput = new Scanner(System.in);
