@@ -8,13 +8,13 @@ public class Student
 		private int engGrade;
 		private int chemGrade;
 
-		public Student(String firstName; String lastName; double gpa; int algGrade; int engGrade; int chemGrade I )
+		public Student(String firstName, String lastName, double gpa, int algGrade, int engGrade, int chemGrade)
 		{
 			this.firstName = firstName;
 			this.lastName = lastName;
 			this.gpa = gpa;
 			this.algGrade = algGrade;
-			this.engGrade = endGrade;
+			this.engGrade = engGrade;
 			this.chemGrade = chemGrade;
 		}
 		//first name
@@ -22,7 +22,7 @@ public class Student
 		{
 			return firstName;
 		}
-		public void setFirstName()
+		public void setFirstName(String firstName)
 		{
 			this.firstName = firstName;
 		}
@@ -31,7 +31,7 @@ public class Student
 		{
 			return lastName;
 		}
-		public void setLastName()
+		public void setLastName(String lastName)
 		{
 			this.lastName = lastName;
 		}
@@ -40,7 +40,7 @@ public class Student
 		{
 			return gpa;
 		}
-		public void setGpa()
+		public void setGpa(double gpa)
 		{
 			this.gpa = gpa;
 		}
@@ -49,7 +49,7 @@ public class Student
 		{
 			return algGrade;
 		}
-		public void setAlgGrade()
+		public void setAlgGrade(int algGrade)
 		{
 			this.algGrade = algGrade;
 		}
@@ -58,7 +58,7 @@ public class Student
 		{
 			return engGrade;
 		}
-		public void setEngGrade()
+		public void setEngGrade(int engGrade)
 		{
 			this.engGrade = engGrade;
 		}
@@ -67,7 +67,7 @@ public class Student
 		{
 			return chemGrade;
 		}
-		public void setChemGrade()
+		public void setChemGrade(int chemGrade)
 		{
 			this.chemGrade = chemGrade;
 		}
