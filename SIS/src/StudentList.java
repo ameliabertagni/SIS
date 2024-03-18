@@ -1,14 +1,19 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class StudentList 
 	{
-		ArrayList<Student> students = new ArrayList<Student>();
+		static List<Student> studentList;
+		public StudentList() {
+			studentList = new ArrayList<>();
+		}
 		
 		public void fileRead() throws IOException
 			{
+				
 				Scanner studentFile = new Scanner(new File("studentData.txt"));
 				while(studentFile.hasNextLine()) {
 					String line = studentFile.nextLine();
@@ -22,7 +27,7 @@ public class StudentList
 					double gpa = (algGrade + engGrade + chemGrade) / 3.0;
 					
 					Student student = new Student(firstname, lastName, gpa, algGrade, engGrade, chemGrade);
-					students.add(student);
+					studentList.add(student);
 				
 				}
 				
@@ -39,7 +44,8 @@ public class StudentList
 			return gradeValue;
 		}
 //This method is used to access the ArrayList for display menus etc.
-		public ArrayList<Student> getStudents() {
-			return students;
+		public static List<Student> getStudents() {
+			return studentList;
 		}
+		
 	}
