@@ -5,54 +5,60 @@ import java.util.ArrayList;
 
 public class AddClass {
 	
-	public static StudentList studentList = new StudentList();
+	private ArrayList<Student>students;
+	private static final String FILE_NAME = "studentData.txt";
 	
-	public static void main(String[] args)
+	public AddClass(ArrayList<Student> students)
 	{
-		addorDelete();
-			Scanner myList = new Scanner(new File("studentData.txt"));
-
+		this.students = students;
 	}
 	
-	public static void addorDelete() 
+	public void addStudent() 
 		{
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("do you want to add or delete a student?");
-		String option = scanner.nextLine();
-		
-		if(option.equals("add"))
-			{
-			addStudent(scanner);
+		System.out.println("Enter the student details");
+		//firstname
+		System.out.print("First Name");
+		String firstName = scanner.next();
+		//lastname
+		System.out.print("Last  Name");
+		String lastName = scanner.next();
+		//gpa
+		System.out.print("GPA");
+		double gpa = scanner.nextDouble();
+		//alg grade
+		System.out.print("Algebra Grade");
+		int algGrade = scanner.nextInt();
+		//eng grade
+		System.out.print("English Grade");
+		int engGrade = scanner.nextInt();
+		//chem grade
+		System.out.print("Chemistry Grade");
+		int chemGrade = scanner.nextInt();
+
+		//adding the new student 
+		Student newStudent = new Student(firstName, lastName, gpa, algGrade, engGrade, chemGrade);
+		students.add(newStudent);
+		System.out.print("added")
 			}
-		else if(option.equals("delete"))
+		public void deleteStudent()
+		{ 
+			Scanner scanner = new Scanner(System.in);
+			System.out.println("Enter the student you want to delete");
+			int index = scanner.nextInt();
+
+			if(index >=0 && index <students.size())
 			{
-				deleteStudent(scanner);
+				students.remove(index);
+				System.out.println("deleted student");
 			}
-		else 
+			else
 			{
-				System.out.println("Invalid option");
-				addorDelete();
+				System.out.println("not valid student");
 			}
 		}
-		public static void addStudent(Scanner scanner)
-		{
-			System.out.println("enter the students details in order: firstName, lastName, gpa, algebra grade, english grade, and chemistry grade");
-			String line = scanner.nextLine();
 			
-			String[] placement = line.split(" ");
-			
-			if(placement.length !=6) {
-				System.out.println("Invalid number of answers...are you forgetting any details?");
-			}
-			String firstName = placement[0];
-			String lastName = placement[1];
-			double gpa = Double.parseDouble(placement[2]);
-			int algGrade = Integer.parseInt(placement[3]);
-			int engGrade = Integer.parseInt(placement[4]);
-			int chemGrade = Integer.parseInt(placement[5]);
-		}
-		
-		public static void deleteStudent(Scanner scanner)
+		public void readFile()
 		{
 			
 		}
