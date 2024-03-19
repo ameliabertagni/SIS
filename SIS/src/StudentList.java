@@ -19,15 +19,18 @@ public class StudentList
 					String line = studentFile.nextLine();
 					String[] section = line.split(" ");
 					
-					String firstname = section[0];
+					String firstName = section[0];
 					String lastName = section[1];
 					int algGrade = changeGrade(section[3]);
 					int engGrade = changeGrade(section[5]);
 					int chemGrade = changeGrade(section[7]);
 					double gpa = (algGrade + engGrade + chemGrade) / 3.0;
 					
-					Student student = new Student(firstname, lastName, gpa, algGrade, engGrade, chemGrade);
-					studentList.add(student);
+
+					Student student = new Student(firstName, lastName, gpa, algGrade, engGrade, chemGrade);
+					students.add(student);
+
+				
 				
 				}
 				
