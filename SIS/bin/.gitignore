@@ -1,32 +1,24 @@
-<<<<<<< HEAD
-/Amelia.class
-/EthanHomeCommit.class
-/Genna.class
-<<<<<<< HEAD
-/AddingNames.class
-=======
-/Gennah.class
-/SISrunner.class
-/homecommit.class
-<<<<<<< HEAD
-/EthanHomeCommit.class
+
+
 /SortClass.class
-=======
+
 /StudentList.class
 /Student.class
->>>>>>> upstream/master
->>>>>>> upstream/master
-<<<<<<< HEAD
+
 /dataStudents.class
-=======
+
 /EthanHomeCommit.class
 /SortClass.class
 /Student.class
 /StudentList.class
 /homecommit.class
 /AddClass.class
->>>>>>> fe6ea6c18891aefb95247bd0b549bd4d47485b4d
+
 /DataStudents.class
-=======
+
 /MainData.class
->>>>>>> upstream/master
+
+/NameSorter.class
+/GPASorter.class
+/PeriodSorter.class
+
