@@ -13,6 +13,25 @@ public class AddClass {
 		this.students = students;
 	}
 	
+	public static void runAdd()
+	{
+		System.out.println("\nWould you like to \n  (1) Add a new student to the database.\n  (2) Delete a student from the database.");
+		Scanner userInput = new Scanner(System.in);
+		int userChoice = userInput.nextInt();
+		if(userChoice ==  1)
+		{
+			addStudent();
+		}
+		else if(userChoice == 2)
+		{
+			deleteStudent();
+		}
+		else
+		{
+			System.out.println("Sorry, you selected a choice not on our list. We will re-direct you to select again.");
+			runAdd();
+		}
+	}
 	public void addStudent() 
 		{
 		Scanner scanner = new Scanner(System.in);
