@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class SortClass
 {
@@ -11,45 +12,33 @@ public class SortClass
 	
 	public static void main(String[] args)
 	{
-		chooseSort();
+		displaySortMenu();
+
 	}
 	
-	public static void chooseSort()
-	{
-		System.out.println("How would you like to sort the student database? \n   1. By last name.\n   2. By GPA.\n   3. By period.");
-		sortPick = userInput.nextInt();
-		if(sortPick == 1)
+	private static void displaySortMenu()
 		{
-			lastName();
+			System.out.println("How Would you like to sort it?");
+			System.out.println("Type (1) for by last name");
+			System.out.println("Type (2) for by GPA");
+			System.out.println("Type (3) for by class period");
+			System.out.println("Type (4) to return to the main menu");
+			
+			Scanner userInput = new Scanner(System.in);
+			int userChoice = userInput.nextInt();	
+			
+			if(userChoice == 1) {
+				Collections.sort(StudentList.studentList, new NameSorter());
+			}
+			else if(userChoice == 2) {
+				Collections.sort(StudentList.studentList, new GPASorter());
+			} else if (userChoice == 3) {
+				Collections.sort(StudentList.studentList, new PeriodSorter());
+			} else {
+				displayMainMenu();
+			}
+			SISrunner.displayData();
 		}
-		else if(sortPick == 2)
-		{
-			gPA();
-		}
-		else if(sortPick == 3)
-		{
-			period();
-		}
-		else
-		{
-			System.out.println("Sorry, that choice was not one of our options. We will let you select a new choice.");
-			chooseSort();
-		}
-	}
-	
-	public static void lastName()
-	{
-		
-	}
-	
-	public static void gPA()
-	{
-		
-	}
-	
-	public static void period()
-	{
-		
-	}
+
 }
 
